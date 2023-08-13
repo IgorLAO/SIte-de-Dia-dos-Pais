@@ -27,6 +27,7 @@ import Dartvader_Luke from '../src/pages/assets/juntos/lukeVader.webp'
 import dupla from '../src/pages/assets/juntos/dupla.png'
 
 import corretSimbolo from '../src/pages/assets/correto.png'
+import erradoSimbolo from '../src/pages/assets/errado.png'
 
 import './App.scss';
 import { useEffect, useState } from 'react';
@@ -36,6 +37,7 @@ function App() {
   const [valor2, setValor2] = useState('')
   const [correto, setCorreto] = useState('')
   const [certo, setCerto] = useState('certo1')
+  const [errado, setErrado] = useState('errado1')
 
 
   useEffect(() => {
@@ -51,6 +53,17 @@ function App() {
           }, 1000);
 
         }
+
+          else if(valor1 != valor2){
+          setCorreto(valor1);
+          
+          setErrado('errado')
+
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+
+          }
       }
     };
   
@@ -88,24 +101,29 @@ function App() {
         </div>
 
               <span className='imagemCorreto'>
-                <img src={imagens[correto]} />
-                <span >
-                  <div className={certo}>
+                <span>
+                  <span className={certo}>
+                <img className='imgjuntos' src={imagens[correto]} />
+                  <div className={certo + '2'}>
+                  <img src={corretSimbolo} className='CorretSimbolo'  />
+                  </div>
+                  </span>
 
-                  <img src={corretSimbolo}  />
+                  <div className={errado}>
+                  <img src={erradoSimbolo}  />
                   </div>
                 </span>
               </span>
 
         <div className='filhos'>
           <img src={quill} onClick={() => setValor2('Yondu_quill')}  />
+          <img src={simba} onClick={() => setValor2('mufasa_Simba')} />
           <img src={zeze}   onClick={() => setValor2('SrIncrivel_Zeze')}/>
           <img src={carl} onClick={() => setValor2('rick_Carl')} />
-          <img src={simba} onClick={() => setValor2('mufasa_Simba')} />
+          <img src={MelhorDev} onClick={() => setValor2('dupla')}  />
           <img src={nemo} onClick={ () => setValor2('Marlin_Nemo') }  />
           <img src={luke_skywalker}  onClick={() => setValor2('Dartvader_Luke')} />
           <img src={bart} onClick={() => setValor2('Homer_Bart')}  />
-          <img src={MelhorDev} onClick={() => setValor2('dupla')}  />
         </div>
 
    </div>
