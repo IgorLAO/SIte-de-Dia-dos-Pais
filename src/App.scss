@@ -1,10 +1,5 @@
 body {
-  background: linear-gradient(
-    180deg,
-    #8ba9be 61.98%,
-    rgba(0, 0, 0, 0.4) 100%
-  ),
-  linear-gradient(0deg, #8ba9be, #8ba9be);
+ background-color: #02886F;
 }
 
 .main {
@@ -21,7 +16,7 @@ body {
 
   .pais {
     display: flex;
-
+    flex-wrap: wrap;
     img {
       border-radius: 1200%;
       max-width: 190px;
@@ -68,15 +63,16 @@ body {
       display: flex;
       flex-direction: column;
 
-      .certo{
-        
+      .certo {
+
         .CorretSimbolo {
           position: absolute;
           top: -105px;
           left: 170px;
           width: 150px;
-          animation: girar 1s linear;
+          animation: girar 500ms linear;
         }
+
         .certo {
           display: flex;
           flex-direction: column;
@@ -102,7 +98,7 @@ body {
           position: absolute;
           top: -110px;
           width: 150px;
-          animation: girar 1s linear;
+          animation: girar 500ms linear;
         }
 
         h2 {
@@ -116,6 +112,7 @@ body {
       0% {
         transform: rotate(0deg);
       }
+
       100% {
         transform: rotate(360deg);
       }
@@ -124,6 +121,7 @@ body {
 
   .filhos {
     display: flex;
+    flex-wrap: wrap;
     height: 200px;
 
     img {
